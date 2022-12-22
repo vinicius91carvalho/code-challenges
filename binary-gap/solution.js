@@ -5,24 +5,24 @@ function solution(n) {
     // Implement your solution here
     const binaryN = n.toString(2)
 
-    const numberOnePostions = []
+    const numberOnePositions = []
     const bynaryNArray = binaryN.split('')
     
     bynaryNArray.forEach((value, index) => {
         if (value == 1) {
-            numberOnePostions.push(index)
+            numberOnePositions.push(index)
         }
     })
 
-    if (numberOnePostions.length < 2) {
+    if (numberOnePositions.length < 2) {
         return 0
     }
 
     let binaryGap = 0
 
-    for (let i = 0; i < numberOnePostions.length; i++) {
-        if (i !== numberOnePostions.length - 1) {
-            let binaryGapTmp = numberOnePostions[i+1] - numberOnePostions[i] - 1
+    for (let i = 0; i < numberOnePositions.length; i++) {
+        if (i !== numberOnePositions.length - 1) {
+            let binaryGapTmp = numberOnePositions[i+1] - numberOnePositions[i] - 1
             if (binaryGapTmp > binaryGap) {
                 binaryGap = binaryGapTmp
             }
